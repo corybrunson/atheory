@@ -9,6 +9,7 @@
 #' @param componentwise Logical, defaults to false. If true, returns a vector of
 #'   the A-1 ranks of the connected components of \code{graph}. If false,
 #'   returns the A-1 rank of \code{graph}, which is the sum of these ranks.
+#' @import igraph
 #' @export
 a1rk <- function(graph, componentwise = FALSE) {
   if (!is_simple(graph)) {
@@ -24,7 +25,7 @@ a1rk <- function(graph, componentwise = FALSE) {
   } else {
     cl <- clusters(graph)
     a1rks <- sapply(1:cl$no, function(i) {
-      indgraph <- induced.subgraph(graph, v = which(cl$membership == i))
+      indgraph <- induced_subgraph(graph, vids = which(cl$membership == i))
       a1rk.connected(indgraph)
     })
     if (componentwise) a1rks else sum(a1rks)

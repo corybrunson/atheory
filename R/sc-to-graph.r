@@ -9,6 +9,7 @@
 #'   each a vector of positive integers representing the nodes.
 #' @param q A positive integer, the minimal dimension of a face two simplices
 #'   must share in order to be connected.
+#' @import igraph
 #' @export
 sc_to_graph <- function(sc, q) {
   edges <- c()                               # empty edge vector

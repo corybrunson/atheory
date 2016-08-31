@@ -3,3 +3,4 @@
 export(a1rk)
 export(sc_to_graph)
 export(top_sc)
+import(igraph)

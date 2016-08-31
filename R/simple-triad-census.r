@@ -6,6 +6,7 @@
 #' 
 #' @param graph The input graph. It can be directed or undirected but the
 #'   function will return the census for its undirected version.
+#' @import igraph
 simple_triad_census <- function(graph) {
   if (!is_simple(graph)) {
     warning("Graph is not simple; simplifying first.")

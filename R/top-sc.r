@@ -2,6 +2,7 @@
 #' 
 #' @param sc The input simplicial complex, represented as a list of simplicies, 
 #'   each a vector of positive integers representing the nodes.
+#' @import igraph
 #' @export
 top_sc <- function(sc) {
   len <- sapply(sc, length)                # vertex counts of simplices
