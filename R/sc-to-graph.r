@@ -11,6 +11,7 @@
 #'   must share in order to be connected.
 #' @import igraph
 #' @export
+#' @example inst/examples/sc-to-graph.r
 sc_to_graph <- function(sc, q) {
   edges <- c()                               # empty edge vector
   sc.q <- sc[which(sapply(sc, length) > q)]  # list of q-maximal simplices

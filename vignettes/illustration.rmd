@@ -10,7 +10,6 @@ vignette: >
 ---
 
 ```{r attach library, echo=FALSE, message=FALSE}
-library(igraph)
 library(atheory)
 ```
 

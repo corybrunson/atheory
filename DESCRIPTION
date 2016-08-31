@@ -10,9 +10,9 @@ Description: A-theory is a discrete analog to simplicial homotopy and homology.
     It was developed by Barcelo, Laubenbacher, and others, inspired by the
     discrete homotopy theory (shomotopy) of Atkin.
 Depends:
-    R (>= 3.3.1)
-Imports:
+    R (>= 3.3.1),
     igraph
+Imports:
 Suggests:
     knitr,
     rmarkdown

@@ -11,6 +11,7 @@
 #'   returns the A-1 rank of \code{graph}, which is the sum of these ranks.
 #' @import igraph
 #' @export
+#' @example inst/examples/a1rk.r
 a1rk <- function(graph, componentwise = FALSE) {
   if (!is_simple(graph)) {
     warning("Graph is not simple; simplifying first.")
