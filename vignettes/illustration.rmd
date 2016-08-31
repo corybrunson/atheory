@@ -42,6 +42,8 @@ for (platonic in platonics) {
 }
 ```
 
+Simplicial complexes are not a class of object; they're represented here as lists of vectors, where each vector contains the nodes that make up the simplex.
+
 ```{r simplicial complex with 1-hole}
 # This example and the next are taken from Barcelo & Laubenbacher (2005)
 # http://www.sciencedirect.com/science/article/pii/S0012365X05002323
