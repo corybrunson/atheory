@@ -1,0 +1,64 @@
+---
+title: "illustration"
+author: "Cory Brunson"
+date: "August 30, 2016"
+output: html_document
+---
+
+```{r install package}
+if (!require(atheory)) {
+  stopifnot(require(devtools))
+  install_github("corybrunson/atheory")
+}
+library(atheory)
+```
+
+## A-homotopy
+
+Only the first homotopy group has been algorithmized. It is called by the \code{a1rk} function.
+
+```{r cycle graph}
+g <- graph(c(1,2, 2,3, 3,4, 4,5, 5,1), directed = FALSE)
+plot(g)
+a1rk(g)
+```
+
+```{r two-cycle graph}
+h <- add_vertices(g, 4)
+h <- add_edges(h, c(2,6, 6,7, 7,8, 8,9, 9,1))
+plot(h)
+a1rk(h)
+```
+
+```{r platonic solids}
+platonics <- c("tetrahedron",
+               "cubical", "octahedron",
+               "dodecahedron", "icosahedron")
+for (platonic in platonics) {
+  print(paste0("The ", platonic, " has rank:"))
+  platonic_graph <- graph.famous(platonic)
+  print(a1rk(platonic_graph))
+}
+```
+
+```{r simplicial complex with 1-hole}
+# This example and the next are taken from Barcelo & Laubenbacher (2005)
+# http://www.sciencedirect.com/science/article/pii/S0012365X05002323
+sc1 <- list(
+  c(1,2,3),
+  c(1,3,4),
+  c(1,4,5),
+  c(1,5,6),
+  c(1,6,2)
+)
+sc1_graph <- sc_to_graph(sc1, q = 1)
+plot(sc1_graph)
+a1rk(sc1_graph)
+```
+
+```{r simplicial complex with filled 1-hole}
+sc2 <- c(sc1, list(c(1,2,5)))
+sc2_graph <- sc_to_graph(sc2, q = 1)
+plot(sc2_graph)
+a1rk(sc2_graph)
+```

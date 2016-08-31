@@ -1,0 +1,20 @@
+Package: atheory
+Type: Package
+Title: A-theory
+Version: 0.1
+Date: 2016-08-27
+Authors@R: person('Jason Cory', 'Brunson', email = 'jabrunso@vt.edu',
+    role = c('aut', 'cre'))
+Maintainer: Jason Cory Brunson <jabrunso@vt.edu>
+Description: A-theory is a discrete analog to simplicial homotopy and homology.
+    It was developed by Barcelo, Laubenbacher, and others, inspired by the
+    discrete homotopy theory (shomotopy) of Atkin.
+Depends:
+    R (>= 3.3.1)
+Imports:
+    igraph
+Suggests:
+    knitr
+License: GPL-2
+VignetteBuilder: knitr
+RoxygenNote: 5.0.1
