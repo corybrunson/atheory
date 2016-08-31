@@ -2,12 +2,21 @@
 title: "illustration"
 author: "Cory Brunson"
 date: "August 30, 2016"
-output: html_document
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{illustration}
+  %\VignetteEngine{rmarkdown::render}
+  %\VignetteEncoding{UTF-8}
 ---
+
+```{r attach library, echo=FALSE, message=FALSE}
+library(igraph)
+library(atheory)
+```
 
 ## A-homotopy
 
-Only the first homotopy group has been algorithmized. It is called by the \code{a1rk} function.
+Only the first homotopy group has been algorithmized. It is called by the `a1rk` function.
 
 ```{r cycle graph}
 g <- graph(c(1,2, 2,3, 3,4, 4,5, 5,1), directed = FALSE)
